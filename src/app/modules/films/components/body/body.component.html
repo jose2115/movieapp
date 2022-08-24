@@ -1,0 +1,21 @@
+
+<div class="w-full h-full hero-image px-4 lg:px-12 pt-20">
+
+  <p class="text-4xl font-sans font-bold text-white">{{(filmOne | async )?.title}} </p>
+  <div class="lg:w-1/2 font-sans text-white">
+    <p>{{(filmOne | async )?.opening_crawl}}</p>
+    <p class="font-semibold text-xl mb-2">{{ (filmOne | async)?.release_date | date:'yyyy' }}</p>
+    <span>Director:</span><span class="font-semibold ml-2">{{(filmOne | async )?.director}}</span>
+    <div [routerLink]="[ '/characters' ]" class="w-1/2 h-auto rounded-lg bg-red-500 cursor-pointer flex justify-center p-2 hover:shadow-md mt-2 mb-2">
+      <span class="text-white text-lg">Personajes</span>
+    </div>
+  </div>
+  <p class="text-3xl font-sans font-bold text-white">Mas Peliculas...</p>
+
+  <div class="flex justify-center w-full overflow-x-auto no-scrollbar pl-72 lg:pl-2">
+    <app-card-films (click)="onSelect(item)" [item]="item" *ngFor="let item of films | async"></app-card-films>
+
+  </div>
+  
+</div>
+

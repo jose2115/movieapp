@@ -1,0 +1,37 @@
+
+<nav class="flex items-center justify-between flex-wrap w-full fixed z-50">
+  <div class="flex items-center flex-no-shrink text-white mr-6 mx-10 my-5">
+    <i class='bx bx-menu text-3xl mr-4 cursor-pointer hidden lg:flex'></i>
+    <i class='bx bx-search text-3xl mr-4 cursor-pointer'></i>
+    <i class='bx bx-bell text-3xl mr-4 cursor-pointer'></i>
+  </div>
+  <div class="block lg:hidden">
+    <i (click)="onView()" class='bx bx-menu text-3xl mr-4 text-white cursor-pointer'></i>
+  </div>
+  <div *ngIf="view" class="w-full block bg-white flex-grow lg:flex lg:items-center lg:w-auto">
+    <div class="text-sm lg:flex-grow pb-4 mx-4">
+      <a [routerLink]="[ '/films' ]" class="block mt-4 lg:text-white lg:inline-block lg:mt-0  mr-4">
+        Home
+      </a>
+      <a [routerLink]="[ '/films' ]" class="block mt-4 lg:text-white lg:inline-block lg:mt-0  mr-4">
+        Films
+      </a>
+      <a [routerLink]="[ '/characters' ]" class="block mt-4 lg:text-white lg:inline-block lg:mt-0  mr-4">
+        Characters
+      </a>
+    </div>
+  </div>
+  <div class="w-full block hidden  flex-grow lg:flex lg:items-center lg:w-auto">
+    <div class="text-sm lg:flex-grow pb-4 mx-4">
+      <a [routerLink]="[ '/films' ]" class="block mt-4 lg:text-white lg:inline-block lg:mt-0  mr-4">
+        Home
+      </a>
+      <a [routerLink]="[ '/films' ]" class="block mt-4 lg:text-white lg:inline-block lg:mt-0  mr-4">
+        Films
+      </a>
+      <a [routerLink]="[ '/characters' ]" class="block mt-4 lg:text-white lg:inline-block lg:mt-0  mr-4">
+        Characters
+      </a>
+    </div>
+  </div>
+</nav>
